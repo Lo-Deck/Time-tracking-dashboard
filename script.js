@@ -67,18 +67,6 @@ for(let i = 0; i < choosePeriod.length; i++)
             weekly.classList.remove('active');
             monthly.classList.add('active');  
 
-            /*
-            hours.forEach( function myFunction(item, index, arr){
-            
-                console.log(index);
-
-                hours[index].innerText = `${array[index].timeframes.monthly.current}hrs`;
-
-                previous[index].innerText = `Last Week - ${array[index].timeframes.monthly.previous}hrs`;
-
-            });
-            */
-
             hours.forEach( (item, index) => { 
 
                 item.innerText = `${array[index].timeframes.monthly.current}hrs`;
