@@ -1,0 +1,329 @@
+:root{
+    --blue: hsl(246, 80%, 60%);
+    --orange: hsl(15, 100%, 70%);/*(work)*/
+    --softBlue: hsl(195, 74%, 62%); /* (play)*/
+    --lightRed: hsl(348, 100%, 68%); /* (study)*/
+    --limeGreen : hsl(145, 58%, 55%); /*(exercise)*/
+    --violet: hsl(264, 64%, 52%); /* (social)*/
+    --softOrange : hsl(43, 84%, 65%); /*(self care)*/
+
+    --veryDarkBlue: hsl(226, 43%, 10%);
+    --darkBlue: hsl(235, 46%, 20%);
+    --desaturatedBlue: hsl(235, 45%, 61%);
+    --paleBlue: hsl(236, 100%, 87%);
+}
+    
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 300;
+    background-color: var(--veryDarkBlue);
+    color: #fff;
+}
+
+.sr-only{
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    position: absolute;
+}
+
+
+/*MAIN*/
+
+.container{
+    max-width: 20.4375rem;
+    width: 100%;
+    margin-top: 5rem;
+}
+
+
+/*HEADER*/
+
+.header-container{
+    background-color: var(--darkBlue);
+    border-radius: 0.8rem;
+}
+
+.display-header{
+    display: flex;
+    align-items: center;
+    background-color: var(--blue);
+    padding: 2.375rem 1.75rem;
+    border-radius: 0.8rem;
+}
+
+.image-hero{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    outline: 0.2rem solid #FFF;
+    margin-right: 1rem;
+}
+
+.header-title{
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.header-title span{
+    display: block; 
+    font-size: 1rem;
+    color: var(--paleBlue);
+}
+
+.period{
+    display: flex;
+    justify-content: space-around;
+    padding: 1.5625rem;
+    color: var(--paleBlue);
+}
+
+.choosePeriod{
+    font-size: inherit;
+    font-family: inherit;
+    background-color: inherit;
+    border: none;
+    color: inherit;
+}
+
+.choosePeriod:hover{
+    cursor: pointer;
+    color: #FFF;
+}
+
+.choosePeriod.active{
+    color: #fff;
+}
+
+
+/*SECTION*/
+
+.item{
+    background-color: var(--darkBlue);
+    margin: 4rem 0;
+    padding: 1.75rem 1.375rem 2.25rem;
+    border-radius: 0.8rem;
+    position: relative;
+}
+
+.item:hover{
+    cursor: pointer;
+    background-color: hsl(235, 33%, 31%);   
+}
+
+.item::before{
+    content: '';
+    width: 100%;
+    height: 3.5rem; 
+    border-radius: 0.8rem 0.8rem 0 0;
+    display: block;
+    background: url(./images/icon-work.svg) no-repeat right 1rem top -0.7rem,
+                var(--orange);
+    position: absolute;
+        top: -2.375rem; left: 0;
+    z-index: -1;
+}
+
+.section-play::before{
+    background: url(./images/icon-play.svg) no-repeat right 1rem top -0.3rem,
+                var(--softBlue);
+}
+
+.section-study::before{
+    background: url(./images/icon-study.svg) no-repeat right 1rem top -0.4rem,
+                var(--lightRed);
+}
+
+.section-exercise::before{
+    background: url(./images/icon-exercise.svg) no-repeat right 1rem top,
+                var(--limeGreen);
+}
+
+.section-social::before{
+    background: url(./images/icon-social.svg) no-repeat right 1rem top -1rem,
+                var(--violet);
+}
+
+.section-selfcare::before{
+    background: url(./images/icon-self-care.svg) no-repeat right 1rem top -0.7rem,
+                var(--softOrange);
+}
+
+.section-title{
+    display: inline-block;
+    font-weight: 400;
+    font-size: 1.125rem;
+}
+
+.ellipsis{
+    display: block;
+    width: 1.25rem;
+    margin-left: auto;
+    position: relative;
+        bottom: 1.3rem;
+    background-color: inherit;
+    border: none;
+    fill: #BBC0FF;
+}
+
+.ellipsis:hover{
+    cursor: pointer;
+    fill: #fff;
+}
+
+.time{
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+}
+
+.hours{
+    font-size: 2rem;
+}
+
+.previous{
+    font-size: 0.9375rem;
+    color: var(--paleBlue);
+}
+
+
+@media screen and (min-width: 70rem)
+{
+
+    body{
+        justify-content: center;
+    }
+
+    .container{
+        width: 69.375rem;
+        height: 32.375rem;
+        display: grid;
+        justify-content: center;
+        align-content: center;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        column-gap: 2rem;
+        row-gap: 2rem;
+        max-width: 100%;
+        margin-top: 0;
+    }
+
+
+    /*MAIN*/
+    
+    .header-container{
+        width: 15.9375rem;
+        position: relative;
+        top: -2.8rem;
+        grid-column: 1;
+        grid-row: 1 / -1;
+    }
+
+    .display-header{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2.375rem 1.625rem 6rem;
+    }
+
+    .image-hero{
+        width: 4.875rem;
+        height: 4.875rem;
+    }
+
+    .header-title{
+        font-size: 2.5rem;
+        font-weight: 300;
+        margin-top: 2.5rem;
+    }
+
+    .period{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        height: 9rem;
+    }
+
+    .choosePeriod{
+        font-size: inherit;
+        font-family: inherit;
+        background-color: inherit;
+        border: none;
+        color: inherit;
+    }
+
+    .item{
+        width: 15.9375rem;
+        height: 12.4375rem;
+        padding: 1.875rem 2rem 2rem 2.125rem ;
+        margin: 0;
+    }
+
+    .item::before{
+        height: 3.875rem; 
+        position: absolute;
+            top: -2.875rem; left: 0;
+    }
+
+    .time{
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start; 
+    }
+    
+    .hours{
+        font-size: 3.5rem;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .previous{
+        font-size: 1rem;
+    }
+
+    .section-work{
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .section-play{
+        grid-column: 3;
+        grid-row: 1;
+    }
+    
+    .section-study{
+        grid-column: 4;
+        grid-row: 1;
+    }
+    
+    .section-exercise{
+        grid-column: 2;
+        grid-row: 2;
+    }
+    
+    .section-social{
+        grid-column: 3;
+        grid-row: 2;
+    }
+    
+    .section-selfcare{
+        grid-column: 4;
+        grid-row: 2;
+    }
+
+}
+
